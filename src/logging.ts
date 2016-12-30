@@ -3,11 +3,11 @@ import _ from "lodash";
 import { dateString } from './date_format'
 import { LogLevel } from "./loglevel"
 
-interface LogWriter {
+export interface LogWriter {
     log(msg: String);
 }
 
-type LogMsg = string | (() => string);
+export type LogMsg = string | (() => string);
 
 export class Logger {
     static concreateWriter: LogWriter;
@@ -37,7 +37,7 @@ export class Logger {
     private _limit: Promise<number>;
     private async getLimit(): Promise<number> {
         if (_.isNil(this._level)) {
-            this._level = await Logger.getDefault();
+            this._level = await LogLevel.getDefault();
             this.output(LogLevel.None, () => `Using default log level: ${this._level}`);
         }
         return this.level.index;

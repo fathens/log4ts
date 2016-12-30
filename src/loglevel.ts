@@ -1,6 +1,5 @@
 import _ from "lodash";
 
-
 export class LogLevel {
     static readonly hasConsole = !_.isEqual(typeof console, "undefined");
     
@@ -11,12 +10,12 @@ export class LogLevel {
     static readonly FATAL = new LogLevel("FATAL");
 
     private static readonly all = [LogLevel.DEBUG, LogLevel.INFO, LogLevel.WARN, LogLevel.FATAL];
-    private static maxLenOfNames = LogLevel.all.map((l) => l.name.length).max();
+    private static maxLenOfNames = _.max(LogLevel.all.map((l) => l.name.length));
     private static _isDebel: boolean;
     private static _default: Promise<LogLevel>;
 
     static async isDevel(): Promise<boolean> {
-        if (_.isNil(Logger._isDebel)) {
+        if (_.isNil(LogLevel._isDebel)) {
             LogLevel._isDebel = LogLevel.hasConsole;
         }
         return LogLevel._isDebel;
