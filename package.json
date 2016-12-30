@@ -1,0 +1,15 @@
+{
+  "name": "log4ts",
+  "version": "0.0.1",
+  "description": "Logging library for Typescript",
+  "main": "lib/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "postinstall": "gulp compile"
+  },
+  "author": "f:athens",
+  "license": "MIT"
+}
