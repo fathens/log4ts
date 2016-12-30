@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Logging library for Typescript",
   "main": "lib/index.js",
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.3"
+  },
   "devDependencies": {
     "gulp": "^3.9.1"
   },
