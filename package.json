@@ -2,7 +2,7 @@
   "name": "log4ts",
   "version": "0.0.1",
   "description": "Logging library for Typescript",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "dependencies": {
     "lodash": "^4.17.3",
     "gulp": "^3.9.1",
