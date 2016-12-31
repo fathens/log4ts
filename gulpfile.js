@@ -8,7 +8,7 @@ gulp.task('clean', del.bind(null, [outDir]));
 
 gulp.task('compile', () => {
     const proj = ts.createProject('tsconfig.json');
-    return gulp.src("src/index.ts")
+    return gulp.src("src/**/*.ts")
     .pipe(proj()).js
     .pipe(gulp.dest('dist'));
 });
