@@ -1,12 +1,16 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var webpack = require('webpack');
+const gulp = require('gulp');
+const del = require('del');
+const ts = require('gulp-typescript');
 
-gulp.task('webpack', (callback) => {
-  webpack(require('./webpack.config.js'), (err, stats) => {
-    if(err) throw new gutil.PluginError('webpack', err);
-    callback();
-  });
+const outDir = 'dist';
+
+gulp.task('clean', del.bind(null, [outDir]));
+
+gulp.task('compile', () => {
+    const proj = ts.createProject('tsconfig.json');
+    return gulp.src("src/index.ts")
+    .pipe(proj()).js
+    .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['webpack']);
+gulp.task('default', ['compile']);
