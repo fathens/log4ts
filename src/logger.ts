@@ -3,6 +3,8 @@ import _ from "lodash";
 import { dateString } from './date_format'
 import { LogLevel } from "./loglevel"
 
+declare var console; 
+
 export interface LogWriter {
     log(msg: String);
 }

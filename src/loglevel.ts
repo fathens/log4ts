@@ -1,5 +1,7 @@
 import _ from "lodash";
 
+declare var console; 
+
 export class LogLevel {
     static readonly hasConsole = !_.isEqual(typeof console, "undefined");
     
