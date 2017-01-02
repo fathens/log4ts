@@ -1,14 +1,11 @@
 {
   "name": "log4ts",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Logging library for Typescript",
   "main": "dist/index.js",
   "dependencies": {
     "@types/lodash": "^4.14.45",
-    "del": "^2.2.2",
-    "lodash": "^4.17.3",
-    "gulp": "^3.9.1",
-    "gulp-typescript": "^3.1.3"
+    "lodash": "^4.17.3"
   },
   "devDependencies": {
     "typescript": "~2.0.10"
@@ -19,8 +16,8 @@
     "typescript": "~2.0.10"
   },
   "scripts": {
-    "build": "gulp",
-    "postinstall": "gulp"
+    "build": "tsc",
+    "postinstall": "tsc"
   },
   "author": "f:athens",
   "license": "MIT"
