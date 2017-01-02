@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "description": "Logging library for Typescript",
   "main": "dist/index.js",
+  "typings": "dist/index",
   "dependencies": {
     "@types/lodash": "^4.14.45",
     "lodash": "^4.17.3"
